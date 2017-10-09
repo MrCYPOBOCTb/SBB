@@ -1,0 +1,8 @@
+<application>
+  <component name="HttpConfigurable">
+    <option name="USE_PROXY_PAC" value="true" />
+    <option name="PROXY_HOST" value="test-env3.sbb.t-systems.ru" />
+    <option name="PROXY_PORT" value="8877" />
+    <option name="PAC_URL" value="http://test-env3.sbb.t-systems.ru" />
+  </component>
+</application>
