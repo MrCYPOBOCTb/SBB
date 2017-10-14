@@ -1,12 +1,13 @@
 package com.SBB;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.io.File;
 
-@SpringBootApplication
+import java.util.Optional;
+
 public class SbbApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SbbApplication.class, args);
-	}
+
+    public static void main(String[] args) throws Exception {
+
+    }
 }

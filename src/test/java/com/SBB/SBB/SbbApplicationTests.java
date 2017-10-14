@@ -1,4 +1,4 @@
-package com.SBB.SBB;
+/*package com.SBB.SBB;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,4 +13,4 @@ public class SbbApplicationTests {
 	public void contextLoads() {
 	}
 
-}
+}*/

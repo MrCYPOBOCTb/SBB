@@ -1,3 +1,4 @@
+/*
 package com.SBB.testing;
 
 import com.SBB.entity.HaltestellePO;
@@ -69,3 +70,4 @@ public class HaltestellePOServiceTest {
         }
     }
 }
+*/
