@@ -1,6 +1,5 @@
 package com.SBB.entity;
 
-import javax.ejb.EJBs;
 import javax.persistence.*;
 import java.sql.Time;
 
@@ -20,13 +19,13 @@ public class FahrplanPO {
     @Column(name = "Bemerkung")
     private String Bemerkung;
 
-    public FahrplanPO(){}
     public FahrplanPO(long haltID,long zugID, Time zeit, String bemerkung){
         this.HaltesetelleID=haltID;
         this.ZugID=zugID;
         this.Zeit=zeit;
         this.Bemerkung=bemerkung;
     }
+    public FahrplanPO(){}
 
     public long getId() {
         return id;

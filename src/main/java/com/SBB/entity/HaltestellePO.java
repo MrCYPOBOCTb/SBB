@@ -10,15 +10,15 @@ public class HaltestellePO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
-    @Column(name = "uic", length = 7)
-    private Integer UIC_CODE;
+    @Column(name = "Uic")
+    private long Uic;
     @Column(name = "Name")
     private String Name;
     @Column(name = "Bemerkung")
     private String Bemerkung;
 
-    public HaltestellePO(Integer UIC_CODE, String Name, String Bemerkung) {
-        this.UIC_CODE = UIC_CODE;
+    public HaltestellePO(long Uic, String Name, String Bemerkung) {
+        this.Uic = Uic;
         this.Name = Name;
         this.Bemerkung = Bemerkung;
     }
@@ -26,12 +26,12 @@ public class HaltestellePO {
     public HaltestellePO() {
     }
 
-    public Integer getUIC_CODE() {
-        return UIC_CODE;
+    public long getUIC_CODE() {
+        return Uic;
     }
 
-    public void setUIC_CODE(Integer uic_code) {
-        this.UIC_CODE = uic_code;
+    public void setUIC_CODE(long uic) {
+        this.Uic = uic;
     }
 
     public String getName() {
@@ -58,7 +58,7 @@ public class HaltestellePO {
     public String toString() {
         return "HaltestellePO{" +
                 "id=" + Id +
-                "UIC_CODE=" + UIC_CODE +
+                "Uic=" + Uic +
                 "Name=" + Name + '}';
     }
 }

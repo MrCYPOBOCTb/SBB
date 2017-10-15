@@ -1,7 +1,5 @@
 package com.SBB.entity;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 import javax.persistence.*;
 
 @Entity
