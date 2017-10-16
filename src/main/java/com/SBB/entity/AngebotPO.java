@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name="Angebot")
+@NamedQuery(name = "Angebot.getAll", query = "SELECT c from AngebotPO c")
 public class AngebotPO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
