@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.*;
-import java.sql.SQLException;
 import java.util.List;
 import java.lang.Exception;
 
@@ -50,6 +49,11 @@ public class HaltServiceImpl implements HaltService {
 
     public List<HaltestellePO> getAll() {
         Query NamedQuery = em.createNamedQuery("Haltestelle.getAll");
+        return NamedQuery.getResultList();
+    }
+
+    public List<HaltestellePO> getHaltByUic(long uic){
+        Query NamedQuery = em.createNamedQuery("Haltestelle.getHaltByUic").setParameter("uic",uic);
         return NamedQuery.getResultList();
     }
 

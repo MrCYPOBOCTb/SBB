@@ -4,72 +4,116 @@ import javax.persistence.*;
 import java.sql.Time;
 
 @Entity
-@Table(name = "halt_x_zug")
-@NamedQuery(name = "Fahrplan.getAll", query = "SELECT c from FahrplanPO c")
+@Table(name = "HALT_X_ZUG")
+@NamedQueries({
+@NamedQuery(name = "Fahrplan.getAll", query = "SELECT c from FahrplanPO c"),
+@NamedQuery(name = "Fahrplan.getFahrplanByZug", query="SELECT c FROM FahrplanPO c WHERE c.zugID = :zug")
+})
 public class FahrplanPO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name = "Haltestelle_ID")
-    private long HaltesetelleID;
+    @Column(name = "HALTESTELLE_ABGANG")
+    private long haltesetelleAbgang;
+    @Column(name = "HALTESTELLE_BESTIMMUNG")
+    private long haltesetelleBestimmung;
     @Column(name = "Zug_ID")
-    private long ZugID;
-    @Column(name = "Zeit")
-    private Time Zeit;
+    private long zugID;
+    @Column(name = "ZEIT_ABGANG")
+    private Time zeitAbgang;
+    @Column(name = "ZEIT_BESTIMMUNG")
+    private Time zeitBestimmung;
+    @Column(name = "REIHENFOLGE")
+    private long reihenfolge;
     @Column(name = "Bemerkung")
-    private String Bemerkung;
+    private String bemerkung;
 
-    public FahrplanPO(long haltID,long zugID, Time zeit, String bemerkung){
-        this.HaltesetelleID=haltID;
-        this.ZugID=zugID;
-        this.Zeit=zeit;
-        this.Bemerkung=bemerkung;
+    public FahrplanPO(long haltAbgang, long haltBestimmung, long zugID, Time zeitAbgang, Time zeitBestimmung, long reihenfolge, String bemerkung) {
+        this.haltesetelleAbgang = haltAbgang;
+        this.haltesetelleBestimmung = haltBestimmung;
+        this.zugID = zugID;
+        this.zeitAbgang = zeitAbgang;
+        this.zeitBestimmung = zeitBestimmung;
+        this.reihenfolge = reihenfolge;
+        this.bemerkung = bemerkung;
     }
-    public FahrplanPO(){}
+
+    public FahrplanPO() {
+    }
 
     public long getId() {
         return id;
     }
 
-    public long getHaltesetelleID() {
-        return HaltesetelleID;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void setHaltesetelleID(long haltesetelleID) {
-        this.HaltesetelleID = haltesetelleID;
+    public long getHaltesetelleAbgang() {
+        return haltesetelleAbgang;
+    }
+
+    public void setHaltesetelleAbgang(long haltesetelleAbgang) {
+        this.haltesetelleAbgang = haltesetelleAbgang;
+    }
+
+    public long getHaltesetelleBestimmung() {
+        return haltesetelleBestimmung;
+    }
+
+    public void setHaltesetelleBestimmung(long haltesetelleBestimmung) {
+        this.haltesetelleBestimmung = haltesetelleBestimmung;
     }
 
     public long getZugID() {
-        return ZugID;
+        return zugID;
     }
 
     public void setZugID(long zugID) {
-        this.ZugID = zugID;
+        this.zugID = zugID;
     }
 
-    public Time getZeit() {
-        return Zeit;
+    public Time getZeitAbgang() {
+        return zeitAbgang;
     }
 
-    public void setZeit(Time zeit) {
-        this.Zeit = zeit;
+    public void setZeitAbgang(Time zeitAbgang) {
+        this.zeitAbgang = zeitAbgang;
+    }
+
+    public Time getZeitBestimmung() {
+        return zeitBestimmung;
+    }
+
+    public void setZeitBestimmung(Time zeitBestimmung) {
+        this.zeitBestimmung = zeitBestimmung;
+    }
+
+    public long getReihenfolge() {
+        return reihenfolge;
+    }
+
+    public void setReihenfolge(long reihenfolge) {
+        this.reihenfolge = reihenfolge;
     }
 
     public String getBemerkung() {
-        return Bemerkung;
+        return bemerkung;
     }
 
     public void setBemerkung(String bemerkung) {
-        this.Bemerkung = bemerkung;
+        this.bemerkung = bemerkung;
     }
 
     @Override
     public String toString() {
         return "FahrplanPO{" +
                 "id=" + id +
-                "HaltestelleID=" + HaltesetelleID +
-                "ZugID=" + ZugID +
-                "Zeit=" + Zeit +
+                "HaltestelleAbgang=" + haltesetelleAbgang +
+                "HaltestelleBestimmung=" + haltesetelleBestimmung+
+                "ZugID=" + zugID +
+                "ZeitAbgang=" + zeitAbgang+
+                "ZeitBestimmung=" + zeitBestimmung+
                 '}';
     }
 }

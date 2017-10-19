@@ -73,7 +73,7 @@
             <uniqueVersion>false</uniqueVersion>
             <id>local</id>
             <name>localhost</name>
-            <url>http://localhost:8079</url>
+            <url>http://localhost:8079/sbb-js/</url>
             <layout>default</layout>
         </repository>
 

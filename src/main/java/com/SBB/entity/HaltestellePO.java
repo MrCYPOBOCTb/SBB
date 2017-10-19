@@ -4,61 +4,68 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "haltestelle")
-@NamedQuery(name = "Haltestelle.getAll", query = "SELECT c from HaltestellePO c")
+@NamedQueries({
+        @NamedQuery(name = "Haltestelle.getAll", query = "SELECT c from HaltestellePO c"),
+        @NamedQuery(name = "Haltestelle.getHaltByUic", query = "SELECT c from HaltestellePO c WHERE c.uic = :uic")
+})
 public class HaltestellePO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
-    @Column(name = "Uic")
-    private long Uic;
-    @Column(name = "Name")
-    private String Name;
-    @Column(name = "Bemerkung")
-    private String Bemerkung;
+    private long id;
+    @Column(name = "uic")
+    private long uic;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "bemerkung")
+    private String bemerkung;
 
-    public HaltestellePO(long Uic, String Name, String Bemerkung) {
-        this.Uic = Uic;
-        this.Name = Name;
-        this.Bemerkung = Bemerkung;
+    public HaltestellePO(long uic, String name, String bemerkung) {
+        this.uic = uic;
+        this.name = name;
+        this.bemerkung = bemerkung;
     }
 
     public HaltestellePO() {
     }
 
-    public long getUIC_CODE() {
-        return Uic;
+    public long getId() {
+        return id;
     }
 
-    public void setUIC_CODE(long uic) {
-        this.Uic = uic;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getUic() {
+        return uic;
+    }
+
+    public void setUic(long uic) {
+        this.uic = uic;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
     public String getBemerkung() {
-        return Bemerkung;
+        return bemerkung;
     }
 
     public void setBemerkung(String bemerkung) {
-        this.Bemerkung = bemerkung;
-    }
-
-    public long getId() {
-        return Id;
+        this.bemerkung = bemerkung;
     }
 
     @Override
     public String toString() {
         return "HaltestellePO{" +
-                "id=" + Id +
-                "Uic=" + Uic +
-                "Name=" + Name + '}';
+                "id=" + id +
+                "uic=" + uic +
+                "name=" + name + '}';
     }
 }

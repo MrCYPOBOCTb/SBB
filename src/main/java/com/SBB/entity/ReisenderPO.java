@@ -5,7 +5,10 @@ import java.util.Date;
 
 @Entity
 @Table(name = "reisender")
-@NamedQuery(name = "Reisender.getAll", query = "SELECT c from ReisenderPO c")
+@NamedQueries({
+  @NamedQuery(name = "Reisender.getAll", query = "SELECT c from ReisenderPO c"),
+        @NamedQuery(name = "Reisender.reisenderById", query = "SELECT c FROM ReisenderPO c where c.id=:reisenderId")
+})
 public class ReisenderPO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
