@@ -5,7 +5,7 @@ import java.sql.Time;
 
 @Entity
 @Table(name = "halt_x_zug")
-@NamedQuery(name = "FahrplanPO.getAll", query = "SELECT c from FahrplanPO c")
+@NamedQuery(name = "Fahrplan.getAll", query = "SELECT c from FahrplanPO c")
 public class FahrplanPO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
